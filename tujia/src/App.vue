@@ -5,5 +5,8 @@
 </template>
 
 <style>
-
+body{
+         height:100%;
+         background: #f7f9fb;
+     }
 </style>
