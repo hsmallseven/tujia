@@ -13,8 +13,6 @@
     </header>
     <!--图片详情-->
     <div id="detailimg">
-      <img src alt />
-      <!-- <div id="detailimg_top"> -->
       <div>
         <i></i>
       </div>
@@ -249,20 +247,7 @@
         </li>
       </ul>
     </div>
-    <!-- <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-      </div>
 
-      <div class="swiper-pagination"></div>
-
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-
-      <div class="swiper-scrollbar"></div>
-    </div>-->
     <div class="pricesm">
       <h3>价格说明</h3>
       <p>
@@ -283,23 +268,17 @@
       <p class="housenum">————&nbsp;房屋编号：176981&nbsp;————</p>
     </div>
     <ul class="bottum">
+      <li>聊天</li>
+      <li>电话</li>
       <li>
-        <p>641</p>
-        <p>聊天</p>
-      </li>
-      <li>
-        <p>641</p>
-        <p>电话</p>
-      </li>
-      <li>
-        <p>修改日期</p>
-        <p>所选日期已慢</p>
+        <span>￥123</span>
+        <span>立即预定</span>
       </li>
     </ul>
   </div>
 </template>
 <script>
-import swiper from "swiper";
+import Swiper from "swiper";
 import "swiper/dist/css/swiper.css";
 export default {
   data() {
@@ -319,40 +298,25 @@ export default {
       }
     }
   },
-  mounted() {}
-  // watch: {
-  //   list() {
-  //     this.$nextTick(() => {
-  //       var mySwiper = new Swiper(".swiper-container", {
-  //         direction: "vertical", // 垂直切换选项
-  //         loop: true, // 循环模式选项
-
-  //         // 如果需要分页器
-  //         pagination: {
-  //           el: ".swiper-pagination"
-  //         },
-  //         loop: true, // 循环模式选项
-  //         autoplay: {
-  //           delay: 3000,
-  //           disableOnInteraction: false
-  //         },
-  //         // 如果需要前进后退按钮
-  //         navigation: {
-  //           nextEl: ".swiper-button-next",
-  //           prevEl: ".swiper-button-prev"
-  //         },
-
-  //         // 如果需要滚动条
-  //         scrollbar: {
-  //           el: ".swiper-scrollbar"
-  //         }
-  //       });
-  //     });
-  //   }
-  // }
+  created() {
+    this.$nextTick(() => {
+      var mySwiper = new Swiper(".swiper-container", {
+        loop: true, // 循环模式选项
+        autoplay: {
+          delay: 1000,
+          disableOnInteraction: false
+        }
+      });
+    });
+  }
 };
 </script>
 <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
 header {
   position: relative;
   height: 0.88rem;
@@ -398,12 +362,7 @@ header > div:nth-child(2) > i:nth-child(2) {
 }
 
 /*图片详情*/
-#detailimg {
-  width: 100%;
-  height: 5.52rem;
-  background-color: aquamarine;
-  position: relative;
-}
+
 /* #detailimg_top{
     position: absolute;
     top: 0;
@@ -413,6 +372,12 @@ header > div:nth-child(2) > i:nth-child(2) {
     height: 1.92rem;
     pointer-events: none;
        } */
+#detailimg {
+  width: 100%;
+  height: 5.52rem;
+  background-color: aquamarine;
+  position: relative;
+}
 #detailimg > div:nth-of-type(1) {
   position: absolute;
   top: 8px;
@@ -719,5 +684,27 @@ header > div:nth-child(2) > i:nth-child(2) {
 }
 .bottum {
   display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.bottum li {
+  width: 20%;
+  height: 1.2rem;
+  text-align: center;
+  line-height: 1.2rem;
+  font-size: 0.3rem;
+  background: white;
+}
+
+.bottum li:nth-child(3) {
+  width: 60%;
+  display: flex;
+  font-weight: 900;
+  color: white;
+  background: orange;
+}
+.bottum li:nth-child(3) span {
+  flex: 1;
 }
 </style>
