@@ -61,13 +61,18 @@
 
     <!-- 发现公寓  -->
     <div id="find">
+<<<<<<< HEAD:tujia/src/views/Home.vue
       <h2>发现公寓</h2>
+=======
+        <h2>{{list.title}}</h2>
+>>>>>>> 76af4999f1ca84c19a2a46472ae15c0c55103c45:src/views/Home.vue
     </div>
     <div id="Housing">
       <ul id="Housinglist">
-        <li>
-          <!-- <router-link > -->
+        <li v-for="(item,index) in list1" :key="index" @click="go(item.unitId)">
+          <!-- <router-link to="./about"> -->
           <div>
+<<<<<<< HEAD:tujia/src/views/Home.vue
             <img
               src="https://pic.tujia.com/upload/mobileconfig/day_180115/thumb/201801151426141610_700_467.jpg"
               alt
@@ -204,6 +209,23 @@
           <!-- </router-link> -->
         </li>
       </ul>
+=======
+              <img :src="item.defaultPicUrl" alt="">
+          </div>
+          <div>
+              <div id="rightmig">
+                <img :src="item.logoURL" alt="">
+                <span></span>
+              </div>
+              <span>{{item.unitName}}</span>
+              <p><span>{{item.unitSummary}}</span><span>{{item.unitBriefInfo}}</span><span>{{item.unitInfor}}</span></p>
+              <p><span>连住优惠</span><span>闪订</span><span>验真</span></p>
+          </div>
+          <!-- </router-link> -->
+        </li>
+
+      </ul> 
+>>>>>>> 76af4999f1ca84c19a2a46472ae15c0c55103c45:src/views/Home.vue
     </div>
 
     <!-- footer  -->
@@ -230,10 +252,45 @@ import Swiper from "swiper";
 import "swiper/dist/css/swiper.css";
 
 export default {
+<<<<<<< HEAD:tujia/src/views/Home.vue
   methods: {
     swiper() {}
   }
 };
+=======
+created(){
+          this.$nextTick(()=>{
+					var mySwiper = new Swiper ('.swiper-container', {
+				    loop: true, // 循环模式选项
+				    autoplay: {
+				    delay: 1000,    
+				     disableOnInteraction: false,
+				    },
+	     		})      
+      });
+      this.$axios.get("/tj/bingo/h5/portal/getPortalUnitModule").then((res)=>{
+        this.list=res.data.data
+        this.list1=res.data.data.units
+        console.log(res.data.data.units)
+      })
+      
+},
+data(){
+  return {
+    list:[],
+    list1:[]
+
+  }
+},
+methods:{
+      swiper(){
+      },
+      go(id){
+        location.href="/about/"+id
+      }
+}
+}
+>>>>>>> 76af4999f1ca84c19a2a46472ae15c0c55103c45:src/views/Home.vue
 </script>
 <style>
 /*头部*/
@@ -367,6 +424,7 @@ export default {
 
 /*发现公寓*/
 
+<<<<<<< HEAD:tujia/src/views/Home.vue
 #find {
   width: 100%;
   height: 1.269rem;
@@ -387,6 +445,28 @@ export default {
 #Housinglist > li > div:nth-child(1) > img {
   width: 100%;
   height: 100%;
+=======
+#find{
+   width:100%;
+  height:1.269rem;
+      text-align: center;
+    background: #fff;
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 65px;
+    color: #666;
+}
+#Housing{
+  width:100%;
+}
+#Housinglist>li>div:nth-child(1){
+  width:100%;
+  height:5.52rem;
+}
+#Housinglist>li>div:nth-child(1)>img{
+  width:100%;
+  height:100%;
+>>>>>>> 76af4999f1ca84c19a2a46472ae15c0c55103c45:src/views/Home.vue
   display: block;
 }
 #Housinglist > li > div:nth-child(2) {
