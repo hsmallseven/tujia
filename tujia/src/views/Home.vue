@@ -50,91 +50,28 @@
   
   <!-- 发现公寓  -->
     <div id="find">
-        <h2>发现公寓</h2>
+        <h2>{{list.title}}</h2>
     </div>
     <div id="Housing">
       <ul id="Housinglist">
-        <li>
-          <!-- <router-link > -->
+        <li v-for="(item,index) in list1" :key="index" @click="go(item.unitId)">
+          <!-- <router-link to="./about"> -->
           <div>
-             <img src="https://pic.tujia.com/upload/mobileconfig/day_180115/thumb/201801151426141610_700_467.jpg" alt="">
+              <img :src="item.defaultPicUrl" alt="">
           </div>
           <div>
               <div id="rightmig">
-                <img src="https://pic.tujia.com/upload/landlordstorelogo/day_190414/201904141412551479.jpg" alt="">
+                <img :src="item.logoURL" alt="">
                 <span></span>
               </div>
-              <span>夫子庙新街口精装高层大飘扇高层亲子房</span>
-              <p><span>4.9分/23点评</span><span>1居/1床/宜住2人</span><span>近张府园地铁站</span></p>
+              <span>{{item.unitName}}</span>
+              <p><span>{{item.unitSummary}}</span><span>{{item.unitBriefInfo}}</span><span>{{item.unitInfor}}</span></p>
               <p><span>连住优惠</span><span>闪订</span><span>验真</span></p>
           </div>
           <!-- </router-link> -->
         </li>
-                <li>
-          <!-- <router-link > -->
-          <div>
-             <img src="https://pic.tujia.com/upload/mobileconfig/day_171204/thumb/201712041639067200_700_467.jpg" alt="">
-          </div>
-          <div>
-                  <div id="rightmig">
-                <img src="" alt="">
-                <span></span>
-              </div>
-              <span>夫子庙新街口精装高层大飘扇高层亲子房</span>
-              <p><span>4.9分/23点评</span><span>1居/1床/宜住2人</span><span>近张府园地铁站</span></p>
-              <p><span>连住优惠</span><span>闪订</span><span>验真</span></p>
-          </div>
-          <!-- </router-link> -->
-        </li>
-                <li>
-          <!-- <router-link > -->
-          <div>
-             <img src="https://pic.tujia.com/upload/mobileconfig/day_180115/thumb/201801151425244459_700_467.jpg" alt="">
-          </div>
-          <div>
-                <div id="rightmig">
-                <img src="" alt="">
-                <span></span>
-              </div>
-              <span>夫子庙新街口精装高层大飘扇高层亲子房</span>
-              <p><span>4.9分/23点评</span><span>1居/1床/宜住2人</span><span>近张府园地铁站</span></p>
-              <p><span>连住优惠</span><span>闪订</span><span>验真</span></p>
-          </div>
-          <!-- </router-link> -->
-        </li>
-                <li>
-          <!-- <router-link > -->
-          <div>
-             <img src="https://pic.tujia.com/upload/mobileconfig/day_171204/thumb/201712041643395816_700_467.jpg" alt="">
-          </div>
-          <div>
-                  <div id="rightmig">
-                <img src="" alt="">
-                <span></span>
-              </div>
-              <span>夫子庙新街口精装高层大飘扇高层亲子房</span>
-              <p><span>4.9分/23点评</span><span>1居/1床/宜住2人</span><span>近张府园地铁站</span></p>
-              <p><span>连住优惠</span><span>闪订</span><span>验真</span></p>
-          </div>
-          <!-- </router-link> -->
-        </li>
-                <li>
-          <!-- <router-link > -->
-          <div>
-             <img src="https://pic.tujia.com/upload/mobileconfig/day_180115/thumb/201801151424465650_700_467.jpg" alt="">
-          </div>
-          <div>
-                  <div id="rightmig">
-                <img src="" alt="">
-                <span></span>
-              </div>
-              <span>夫子庙新街口精装高层大飘扇高层亲子房</span>
-              <p><span>4.9分/23点评</span><span>1居/1床/宜住2人</span><span>近张府园地铁站</span></p>
-              <p><span>连住优惠</span><span>闪订</span><span>验真</span></p>
-          </div>
-          <!-- </router-link> -->
-        </li>
-      </ul>
+
+      </ul> 
     </div>
 
     <!-- footer  -->
@@ -170,10 +107,26 @@ created(){
 				     disableOnInteraction: false,
 				    },
 	     		})      
-			})
+      });
+      this.$axios.get("/tj/bingo/h5/portal/getPortalUnitModule").then((res)=>{
+        this.list=res.data.data
+        this.list1=res.data.data.units
+        console.log(res.data.data.units)
+      })
+      
+},
+data(){
+  return {
+    list:[],
+    list1:[]
+
+  }
 },
 methods:{
       swiper(){
+      },
+      go(id){
+        location.href="/about/"+id
       }
 }
 }
@@ -324,7 +277,6 @@ height:100%;
 }
 #Housing{
   width:100%;
-  
 }
 #Housinglist>li>div:nth-child(1){
   width:100%;
