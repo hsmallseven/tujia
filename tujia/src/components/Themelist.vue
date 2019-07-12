@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="Themelist">
     <ul class="list">
       <li v-for="(item,index) in list" v-if="type==='daban' ||type==='jingdu' ||type==='fugang'">
@@ -40,7 +40,7 @@ export default {
       //   created() {
       this.$axios.get("http://localhost:3000/items").then(res => {
         this.list = res.data;
-        // this.type = $route.params;
+      // this.type = $route.params;
         console.log(res);
       });
     }
@@ -82,6 +82,7 @@ li {
   padding: 0.1rem;
   background: #ffdde3;
   position: relative;
+height:4.42rem;
 }
 img {
   width: 100%;

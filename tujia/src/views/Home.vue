@@ -6,7 +6,7 @@
         <div>
           <span></span>
         </div>
-        <div></div>
+        <div class="iconfont" @click.self="openmenu">&#xe790;<menhurdleu v-show="flags"></menhurdleu></div>
       </div>
       <div id="Swiper">
         <div class="swiper-container">
@@ -24,13 +24,13 @@
         <div>
           <!-- <router-link> -->
             <span></span>
-            <p>我的途家</p>
+            <p @click="myhome">我的途家</p>
           <!-- </router-link> -->
         </div>
         <div>
           <!-- <router-link> -->
             <span></span>
-            <p>我的订单</p>
+            <p @click="myhometwo">我的订单</p>
           <!-- </router-link> -->
         </div>
       </div>
@@ -40,7 +40,7 @@
     <div id="theme">
       <h2>精选主题</h2>
     </div>
-    <div id="theme_swiper">
+    <div id="theme_swiper"  @click="jumptheeme">
           <div class="swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="https://pic.tujia.com/upload/mobileconfig/day_190705/201907051026578840.jpg" alt=""></div>
@@ -52,7 +52,7 @@
     <div id="find">
         <h2>发现公寓</h2>
     </div>
-    <div id="Housing">
+    <div id="Housing" @click="jumpparticular">
       <ul id="Housinglist">
         <li>
           <!-- <router-link > -->
@@ -159,8 +159,13 @@
 <script>
 import Swiper from "swiper";
 import "swiper/dist/css/swiper.css";
-
+import menhurdleu from './menuhurdle'
 export default {
+  data(){
+     return{
+         flags:false,
+     }
+  },
 created(){
           this.$nextTick(()=>{
 					var mySwiper = new Swiper ('.swiper-container', {
@@ -174,8 +179,26 @@ created(){
 },
 methods:{
       swiper(){
+      },
+      openmenu(){
+            this.flags=!this.flags
+      },
+      myhome(){
+          location.href="/wayhome"
+      },
+      myhometwo(){
+          location.href="/indent/all"
+      },
+      jumptheeme(){
+         location.href="/theme"
+      },
+      jumpparticular(){
+          location.href="/about"
       }
-}
+},
+ components:{
+       menhurdleu
+     }
 }
 </script>
 <style>
@@ -206,11 +229,12 @@ methods:{
 }
 #indexheade_top > div:nth-child(2) {
   position: absolute;
-  top: 12.5px;
+  top: 10px;
   right: 10px;
   line-height: 13px;
   padding: 10px;
-  background-color: aqua;
+  font-size:0.46rem;
+     color: #f60;
 }
 #Swiper {
   width: 100%;

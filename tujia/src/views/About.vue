@@ -112,7 +112,11 @@
   </div>
 </template>
 <script>
+import menhurdleu from './menuhurdle'
 export default {
+     components:{
+       menhurdleu
+     },
     data(){
       return {
         houseopen:"展开全部"

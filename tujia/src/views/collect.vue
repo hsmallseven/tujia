@@ -6,20 +6,19 @@
                      <img src="https://staticfile.tujia.com/mobile/styles/page/img/icon/logo_header.png">
                  </a>
                  <div class="titleskip">
-                       <router-link to="/wayhome" class="inland"><div>国内订单</div></router-link>
-                       <router-link to="/wayhome"><div>海外·港台</div></router-link>
+                       我的收藏
                  </div>
                   <a href="##" class="headerright">
                        <i class="iconfont">&#xe790;</i>
                   </a>
           </div>
           <ul class="skip">
-                <router-link to=""><li><a href="##"><span>全部</span></a></li></router-link>
-                  <router-link to=""> <li><a href="##"><span>待支付</span></a></li></router-link>
-                    <router-link to="">  <li><a href="##"><span>待点评</span></a></li></router-link>
-                      <router-link to=""><li><a href="##"><span>代入住</span></a></li></router-link>
+                <li><a href="##"><span>全部</span></a></li>
+                  <li><a href="##"><span>待支付</span></a></li>
+                    <li><a href="##"><span>待点评</span></a></li>
+                      <li><a href="##"><span>代入住</span></a></li>
           </ul>
-          <router-view/>
+          <div class=" orderdetails">暂无收藏</div>
           <kefu class="margintop"></kefu>
     </div>
 </template>
@@ -104,16 +103,14 @@ export default{
           border-bottom: 2px solid #f60;
       }
       .titleskip{
-          padding: 0.12rem 0.3rem;
-           box-sizing:border-box;
            line-height:0.8rem;
            height:0.8rem;
            font-size:0.24rem;
-           display:flex;
            float:left;
            margin-left:0.4rem;
            text-align:center;
-           width:4.6rem
+           width:4.6rem;
+ 
            
       }
       .titleskip a{
@@ -129,11 +126,7 @@ export default{
          color: #666;
          text-decoration:none;
       }
-       .titleskip .inland{
-                border-radius: 0.1rem 0 0 0.1rem;
-                background-color: #666;
-                  color: #fff;
-       }
+
        .orderdetails{
        padding: 0.8rem 0;
        text-align: center;

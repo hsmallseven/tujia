@@ -3,6 +3,12 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import theme from './components/Theme.vue'
 import Themelist from './components/Themelist.vue'
+import Menuhurdle from './views/menuhurdle.vue'
+import indent from './views/indent.vue'
+import collect from './views/collect.vue'
+import all from './views/all.vue'
+import indentclass from './views/indentclass.vue'
+import wayhome from './views/WayHome.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -21,11 +27,12 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }, {
+    }, 
+    {
       path: '/theme',
       name: 'theme',
       component: theme,
-     children: [
+       children: [
            {
           path: '/Theme/Themelist/:type',
           name: 'Themelist',
@@ -34,5 +41,33 @@ export default new Router({
       ]
 
     },
+    {
+      path: '/menuhurdle',
+      name: 'menuhurdle',
+      component: Menuhurdle
+    },
+    {
+      path: '/indent',
+      name: 'indent',
+      component: indent,
+      redirect:{name:"all"},
+      children:[
+        {
+          path: '/indent/all',
+         name: 'all',
+         component: all,
+        }
+      ]
+    },
+    {
+      path: '/collect',
+      name: 'collect',
+      component: collect
+    },
+    {
+      path: '/wayhome',
+      name: 'wayhome',
+      component: wayhome
+    }
   ]
 })
