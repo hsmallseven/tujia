@@ -1,6 +1,5 @@
 <template>
-  <div class="about">
-    <!--头部-->
+  <div>
     <header>
       <div>
         <span>房屋详情</span>
@@ -9,43 +8,32 @@
         <i></i>
         <i></i>
       </div>
-      <div></div>
     </header>
-    <!--图片详情-->
     <div id="detailimg">
-<<<<<<< HEAD:tujia/src/views/About.vue
       <div>
         <i></i>
       </div>
       <div>
         <i></i>
       </div>
-      <!-- </div> -->
-=======
-          <div id="theme_swiper">
-          <div class="swiper-container">
-          <div class="swiper-wrapper" >
-            <div class="swiper-slide"  v-for="(item,index) in imglist" :key="index">
-              <img :src="item.albumUrl" alt="">
-              </div>
+
+      <!-- <div id="theme_swiper">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="(item,index) in imglist" :key="index">
+            <img :src="item.albumUrl" alt />
           </div>
         </div>
+      </div>
+      </div>-->
+      <div>
+        <i></i>
+      </div>
+      <div>
+        <i></i>
+      </div>
     </div>
-        <!-- <img src="" alt=""> -->
-        <!-- <div id="detailimg_top"> -->
-          <div>
-            <i></i>
-          </div>
-          <div>
-            <i></i>
-          </div>
-        <!-- </div> -->
->>>>>>> 76af4999f1ca84c19a2a46472ae15c0c55103c45:src/views/About.vue
-    </div>
-
-    <!--信息-->
     <div id="detailmiddle">
-<<<<<<< HEAD:tujia/src/views/About.vue
       <div class="detailtext">
         <h3>夫子庙新街口精装高层大飘窗巨幕亲子房3</h3>
       </div>
@@ -63,74 +51,71 @@
           </li>
         </ul>
       </div>
-      <div id="detailmain">
-        <div id="detailmain_exe1">
-          <img
-            src="https://pic.tujia.com/upload/landlordstorelogo/day_190414/thumb/201904141412551479_150_150.jpg"
-            alt
-          />
-          <div>
-            <h4>犀牛之家</h4>
-            <p>个人房东,实名认证</p>
-=======
-        <div class="detailtext">
-          <h3>{{data.unitName}}</h3>
-        </div>
-        <div id="detailtext1"> 
+    </div>
+
+    <div id="detailmain">
+      <div id="detailmain_exe1">
+        <img
+          src="https://pic.tujia.com/upload/landlordstorelogo/day_190414/thumb/201904141412551479_150_150.jpg"
+          alt
+        />
+        <div>
+          <h4>犀牛之家</h4>
+          <p>个人房东,实名认证</p>
+
+          <div class="detailtext">
+            <h3>{{data.unitName}}</h3>
+          </div>
+          <div id="detailtext1">
             <ul>
               <li>
                 <p></p>
                 <h3>{{data.roomCountSummary}}</h3>
                 <p>{{data.houseTypeName}}{{data.grossArea}}平米</p>
-                
               </li>
               <li>
                 <p></p>
                 <h3>{{data.bedSummary}}</h3>
                 <p>{{data.bedDescriptions}}</p>
-                
               </li>
             </ul>
-        </div>
-        <div id="detailmain">
+          </div>
+          <div id="detailmain">
             <div id="detailmain_exe1">
-                <img :src="data.landlordInfo.logoUrl" alt="">
-                <div>
-                  <h4>{{data.landlordInfo.hotelName}}</h4>
-                  <p>{{data.businessTypeName}},实名认证</p>
-                </div>
-                <div>
-                    &gt;
-                </div>
+              <img :src="data.landlordInfo.logoUrl" alt />
+              <div>
+                <h4>{{data.landlordInfo.hotelName}}</h4>
+                <p>{{data.businessTypeName}},实名认证</p>
+              </div>
+              <div>&gt;</div>
             </div>
-            <div id="detailmain_exe2">
-                
-            </div>
-        </div>
-        <!--房屋位置-->
-        <div id="houselocation">
+            <div id="detailmain_exe2"></div>
+          </div>
+          <!--房屋位置-->
+          <div id="houselocation">
             <div>
               <h1>房屋位置</h1>
               <div>
-                <img src="https://api.map.baidu.com/staticimage?width=670&height=200&center=118.77943,32.041607&zoom=16&markers=118.77943,32.041607&markerStyles=-1,https://staticfile.tujia.com/mobile/images/h5/housedetail/mapicon.png" alt="">
+                <img
+                  src="https://api.map.baidu.com/staticimage?width=670&height=200&center=118.77943,32.041607&zoom=16&markers=118.77943,32.041607&markerStyles=-1,https://staticfile.tujia.com/mobile/images/h5/housedetail/mapicon.png"
+                  alt
+                />
                 <p id="houselocation_p">
                   <i></i>
                   <span>{{data.address}}</span>
                 </p>
               </div>
             </div>
+          </div>
         </div>
-    </div>
 
-
-      <!--房屋详情-->
-      <div id="housedetail">
+        <!--房屋详情-->
+        <div id="housedetail">
           <h1>房屋详情</h1>
           <h2>房屋描述</h2>
           <div id="housedetail_div" ref="detailtext">{{data.introduction}}</div>
           <div id="houseopen">
             <span @click="open" ref="open">展开全部</span>
->>>>>>> 76af4999f1ca84c19a2a46472ae15c0c55103c45:src/views/About.vue
           </div>
           <div>&gt;</div>
         </div>
@@ -362,7 +347,6 @@
 import Swiper from "swiper";
 import "swiper/dist/css/swiper.css";
 export default {
-<<<<<<< HEAD:tujia/src/views/About.vue
   data() {
     return {
       houseopen: "展开全部"
@@ -390,55 +374,51 @@ export default {
         }
       });
     });
-  }
-};
-=======
-    data(){
-      return {
-        houseopen:"展开全部",
-        imglist:[],
-        data:[]
-      }
-    },
-    created(){
-      
-      this.$axios.get("http://localhost:3000/"+this.$route.params.id).then((res)=>{
-        this.data=res.data[0]
-        this.imglist=res.data[0].pictureList;
-        console.log(res.data)
-        console.log(this.data.landlordInfo.hotelName)
-      })
-    },
-    watch:{
-      imglist(){
-                          this.$nextTick(()=>{
-					var mySwiper = new Swiper ('.swiper-container', {
-				    loop: true, // 循环模式选项
-				    autoplay: {
-				    delay: 1000,    
-				     disableOnInteraction: false,
-				    },
-	     		})      
+  },
+
+  data() {
+    return {
+      houseopen: "展开全部",
+      imglist: [],
+      data: []
+    };
+  },
+  created() {
+    this.$axios
+      .get("http://localhost:3000/" + this.$route.params.id)
+      .then(res => {
+        this.data = res.data[0];
+        this.imglist = res.data[0].pictureList;
+        console.log(res.data);
+        console.log(this.data.landlordInfo.hotelName);
       });
+  },
+  watch: {
+    imglist() {
+      this.$nextTick(() => {
+        var mySwiper = new Swiper(".swiper-container", {
+          loop: true, // 循环模式选项
+          autoplay: {
+            delay: 1000,
+            disableOnInteraction: false
+          }
+        });
+      });
+    }
+  },
+  methods: {
+    open() {
+      if (this.$refs.open.innerText === "展开全部") {
+        this.$refs.detailtext.style.height = "auto";
+        this.$refs.open.innerText = "收起";
+      } else {
+        this.$refs.detailtext.style.height = "0.64rem";
+        this.$refs.open.innerText = "展开全部";
       }
-    },
-    methods:{
-      open(){
-        if(this.$refs.open.innerText==="展开全部"){
-
-          this.$refs.detailtext.style.height="auto";
-          this.$refs.open.innerText="收起"
-        }else{
-           this.$refs.detailtext.style.height="0.64rem"
-             this.$refs.open.innerText="展开全部"
-        }
-
-      },
-    },
-    mounted(){
-    },
-}
->>>>>>> 76af4999f1ca84c19a2a46472ae15c0c55103c45:src/views/About.vue
+    }
+  },
+  mounted() {}
+};
 </script>
 <style>
 * {
@@ -490,25 +470,22 @@ header > div:nth-child(2) > i:nth-child(2) {
   background-size: 32px 15px;
 }
 
-<<<<<<< HEAD:tujia/src/views/About.vue
 /*图片详情*/
 
 /* #detailimg_top{
 =======
        /*图片详情*/
-       #detailimg{
-         width:100%;
-         height:5.52rem;
-         /* background-color: aquamarine; */
-             position: relative;
-
-       }
-       .theme_swiper{
-         width:100%;
-         height:100%;
-         
-       }
-       /* #detailimg_top{
+#detailimg {
+  width: 100%;
+  height: 5.52rem;
+  /* background-color: aquamarine; */
+  position: relative;
+}
+.theme_swiper {
+  width: 100%;
+  height: 100%;
+}
+/* #detailimg_top{
 >>>>>>> 76af4999f1ca84c19a2a46472ae15c0c55103c45:src/views/About.vue
     position: absolute;
     top: 0;
@@ -518,7 +495,7 @@ header > div:nth-child(2) > i:nth-child(2) {
     height: 1.92rem;
     pointer-events: none;
        } */
-<<<<<<< HEAD:tujia/src/views/About.vue
+
 #detailimg {
   width: 100%;
   height: 5.52rem;
@@ -561,44 +538,43 @@ header > div:nth-child(2) > i:nth-child(2) {
   height: 0.4rem;
   background-size: 0.4rem 0.4rem;
 }
-=======
-        #detailimg>div:nth-of-type(2){
-    position: absolute;
-    top: 8px;
-    right: 1rem;
-    z-index: 9;
-    width: 1rem;
-    height: 1rem;
-    text-align: center;
-    line-height: 50px;
-        }
-        #detailimg>div:nth-of-type(2)>i{
-              display: inline-block;
-    background-image: url(https://nmstatic.tujia.com/static/images/page-unitDetal.bd91f27.png);
-    background-position: -126px -82px;
-    width: 0.4rem;
-    height: 0.4rem;
-    background-size: 165px 160px;
-        }
-    #detailimg>div:nth-of-type(3){
-            position: absolute;
-            top: 8px;
-            right: 0.3rem;
-            z-index: 9;
-            width: 1rem;
-            height: 1rem;
-            text-align: center;
-            line-height: 50px;
-        }
-    #detailimg>div:nth-of-type(3)>i{
-    display: inline-block;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0E2NjIxNkM0QUE1MTFFN0IzMkM4MEJBQ0IxREQ5QUIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0E2NjIxNkQ0QUE1MTFFN0IzMkM4MEJBQ0IxREQ5QUIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDQTY2MjE2QTRBQTUxMUU3QjMyQzgwQkFDQjFERDlBQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDQTY2MjE2QjRBQTUxMUU3QjMyQzgwQkFDQjFERDlBQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgL541IAAAL+SURBVHjaxJdbiE1hFMfPOU4zmcmtcX0glymX3B7cYjCNu4lJbi8jJU0Scsu4PMgLJYQaUwovLpkRSgwipXELMxjjQSdxGsQUM0Mil/Ff9du1mzpnzt5mtlW/s/fZe397rf1961vf/wsXFRWF/qdFElwfKnaLp6JRNIt3olzMSvK+2eIczzbT9ok4IAanEkCmKBXPxTYxUnTmXh+xSFwVZaKrq113rleIhTwbou0osUHUiH0iPVEAWeK2WCV+iSNiEo7CIlsUiwaxWDzAUQ9xl575LLaIQbTpxjtK6ZFNBNnFcRomBzqIa2KaeCkWiBcJurm/uMiXPRR/xHhRRbt4gnYjxAWCsyDyLSinB4pxbmOXm8S52WsxQ8TEWJzHuBZP0q6Gd9eJOWKdMwTWxVt5aLl4n0Ly1osl4jvY+acU2pnzlZxvt5yL6qdQdBI3xQ0PM6habGSsqz20s6GuFDmW1FHGwuyEj2lc6nP6nySAfBuC0VysDLD+3OI4zgLozZ94gAE4vnpFmJ9BW9hdiJys7xtgAP04foy4MnhygAHkcKyyAM7zZ1mAARRyvBKhPH6hlk8IwPlEKqKtG2URTg5zc787QdrBbM05xLkt0Y3OWrCXdcCiW92OAawRY5iGB93LcZNY6wpmWDs4t9VwD9PePvJrSz1gyXhUZIiz7jW7DSyL93cUJeJyIkXkKJfhNEhrA+cZvCsbEbM5mST7JuaybOaJ0ySOX0tDI05BM8wTP1oTpXUE0YC+OyWiPp2XIz7qXceUVHENCseCWMpXpHtwbuL2kpiP0zx6IGVZbvaIIEzpFFjVQmS2Zj0RNjPFBzEdlR3yGoAThI3fW77ijhiQ5Pkh4h4V9RU1/5mfjYnbapHWtWxY7ico2bnI84HiMc5jfndGLe0NVbKCLjZFs6JFhbvOEFm+TE1R3HrK7iamke1u1otjyPJMVtJmKt0OLyLH6/T67SpWJeyiQpRV2+Gc8TpXoz4LzHF2QrvET7GTHAkFFUCIXW/Bv9bpvwIMAJrxp6seHhdvAAAAAElFTkSuQmCC);
-    /* background-position: -126px -82px; */
-    width: 0.4rem;
-    height: 0.4rem;
-    background-size: 0.4rem 0.4rem;
-        }
->>>>>>> 76af4999f1ca84c19a2a46472ae15c0c55103c45:src/views/About.vue
+
+#detailimg > div:nth-of-type(2) {
+  position: absolute;
+  top: 8px;
+  right: 1rem;
+  z-index: 9;
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  line-height: 50px;
+}
+#detailimg > div:nth-of-type(2) > i {
+  display: inline-block;
+  background-image: url(https://nmstatic.tujia.com/static/images/page-unitDetal.bd91f27.png);
+  background-position: -126px -82px;
+  width: 0.4rem;
+  height: 0.4rem;
+  background-size: 165px 160px;
+}
+#detailimg > div:nth-of-type(3) {
+  position: absolute;
+  top: 8px;
+  right: 0.3rem;
+  z-index: 9;
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  line-height: 50px;
+}
+#detailimg > div:nth-of-type(3) > i {
+  display: inline-block;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0E2NjIxNkM0QUE1MTFFN0IzMkM4MEJBQ0IxREQ5QUIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0E2NjIxNkQ0QUE1MTFFN0IzMkM4MEJBQ0IxREQ5QUIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDQTY2MjE2QTRBQTUxMUU3QjMyQzgwQkFDQjFERDlBQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDQTY2MjE2QjRBQTUxMUU3QjMyQzgwQkFDQjFERDlBQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgL541IAAAL+SURBVHjaxJdbiE1hFMfPOU4zmcmtcX0glymX3B7cYjCNu4lJbi8jJU0Scsu4PMgLJYQaUwovLpkRSgwipXELMxjjQSdxGsQUM0Mil/Ff9du1mzpnzt5mtlW/s/fZe397rf1961vf/wsXFRWF/qdFElwfKnaLp6JRNIt3olzMSvK+2eIczzbT9ok4IAanEkCmKBXPxTYxUnTmXh+xSFwVZaKrq113rleIhTwbou0osUHUiH0iPVEAWeK2WCV+iSNiEo7CIlsUiwaxWDzAUQ9xl575LLaIQbTpxjtK6ZFNBNnFcRomBzqIa2KaeCkWiBcJurm/uMiXPRR/xHhRRbt4gnYjxAWCsyDyLSinB4pxbmOXm8S52WsxQ8TEWJzHuBZP0q6Gd9eJOWKdMwTWxVt5aLl4n0Ly1osl4jvY+acU2pnzlZxvt5yL6qdQdBI3xQ0PM6habGSsqz20s6GuFDmW1FHGwuyEj2lc6nP6nySAfBuC0VysDLD+3OI4zgLozZ94gAE4vnpFmJ9BW9hdiJys7xtgAP04foy4MnhygAHkcKyyAM7zZ1mAARRyvBKhPH6hlk8IwPlEKqKtG2URTg5zc787QdrBbM05xLkt0Y3OWrCXdcCiW92OAawRY5iGB93LcZNY6wpmWDs4t9VwD9PePvJrSz1gyXhUZIiz7jW7DSyL93cUJeJyIkXkKJfhNEhrA+cZvCsbEbM5mST7JuaybOaJ0ySOX0tDI05BM8wTP1oTpXUE0YC+OyWiPp2XIz7qXceUVHENCseCWMpXpHtwbuL2kpiP0zx6IGVZbvaIIEzpFFjVQmS2Zj0RNjPFBzEdlR3yGoAThI3fW77ijhiQ5Pkh4h4V9RU1/5mfjYnbapHWtWxY7ico2bnI84HiMc5jfndGLe0NVbKCLjZFs6JFhbvOEFm+TE1R3HrK7iamke1u1otjyPJMVtJmKt0OLyLH6/T67SpWJeyiQpRV2+Gc8TpXoz4LzHF2QrvET7GTHAkFFUCIXW/Bv9bpvwIMAJrxp6seHhdvAAAAAElFTkSuQmCC);
+  /* background-position: -126px -82px; */
+  width: 0.4rem;
+  height: 0.4rem;
+  background-size: 0.4rem 0.4rem;
+}
 
 /*信息*/
 
